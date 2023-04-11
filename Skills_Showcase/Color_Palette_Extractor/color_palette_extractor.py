@@ -3,9 +3,8 @@
 COLOR PALETTE EXTRACTOR V3
 
 This script extracts a color palette from an input image using a KMeans clustering algorithm. 
-It uses KMeans clustering algorithm twice to improve the accuracy of the color palette extraction. 
 First a KMeans algorithm extracts the main color palette of the image. The pixels are then each re-examined and compared to the dominant colors. 
-After then extracting the pixels with color labels most dissimilar to palette colors, the remaining pixels are clustered with a KMeans algo, 
+After then extracting the pixels with color labels most dissimilar to palette colors, the remaining pixels are clustered with a KMeans algo (again), 
 and a representative color is chosen from among the cluster centers. 
 
 This process makes the color palette extraction more robust and accurate for a wider range of images, 
