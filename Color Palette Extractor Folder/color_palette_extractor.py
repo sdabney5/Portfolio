@@ -44,7 +44,6 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 from io import BytesIO
-import math
 
 
 
@@ -137,30 +136,11 @@ def combined_pixels_to_rgb(combined_pixels):
 
 
 
-def color_distance_hsl(color1, color2):
-    """
-    Calculates the distance between two colors in the HSL color space.
-    """
-    h1, s1, l1 = color1
-    h2, s2, l2 = color2
-    dh = min(abs(h1 - h2), 360 - abs(h1 - h2)) / 360
-    ds = abs(s1 - s2) / 100
-    dl = abs(l1 - l2) / 100
-    return math.sqrt(dh ** 2 + ds ** 2 + dl ** 2)
-
-
-
-# Preprocess Image
-
-
 #resize function
-def resize_image(img, quick):
+def resize_image(img):
     # check image size and resize if too big (>1000x1000)
-    if img.size[0] > 199 or img.size[1] > 299:
-        if quick:
-            newsize_img = img.resize((100, 150))
-        else:
-            newsize_img = img.resize((200, 300))
+    if img.size[0] > 100 or img.size[1] > 150:
+        newsize_img = img.resize((100, 150))
     else:
         newsize_img = img.copy()
 
@@ -168,9 +148,9 @@ def resize_image(img, quick):
 
 
 # Resize image, convert to rgb mode, and return as a 2d array of rgb pixels
-def preprocess(img, quick):
+def preprocess(img):
     # resize image
-    newsize_img = resize_image(img, quick)
+    newsize_img = resize_image(img)
 
     # make sure the image is in RGB mode (not grayscale, CMYK, etc.)
     newsize_img = newsize_img.convert('RGB')
@@ -182,9 +162,6 @@ def preprocess(img, quick):
     rgb_pixels = rgb_pixels.reshape((-1, 3))
 
     return rgb_pixels
-
-
-
 
 
 
@@ -232,10 +209,8 @@ def compare_color_labels(unique_color_labels, unique_color_pixels, cluster_color
     # Convert the pixels list back to a numpy array.
     unique_color_pixels_dissimilar = np.array(unique_color_pixels_list)
 
-    print("unique_color_labels_dissimilar length", len(unique_color_labels))
+    #print("unique_color_labels_dissimilar length", len(unique_color_labels))
     return unique_color_labels_dissimilar, unique_color_pixels_dissimilar
-
-
 
 
 
@@ -502,9 +477,6 @@ def identify_unique_colors(pixel_color_labels_list, hsl_pixels, cluster_center_p
 
     unique_color_labels = unique_color_labels_final
 
-    print("Unique color Pixel length: ", len(unique_color_pixels))
-    print("Unique Color Labels Length: ", len(unique_color_labels))
-
     return unique_color_pixels, unique_color_labels
 
 
@@ -550,12 +522,12 @@ def get_most_interesting_color(new_unique_color_pixels):
 
     # Fits new_unique_color_pixels to KMeans classifier so we can select a more representative color than just an average.
     new_unique_color_pixels = np.array(new_unique_color_pixels)
-    unique_clf = KMeans(n_clusters=10) 
+    unique_clf = KMeans(n_clusters=10, n_init= 'auto') 
     unique_clf.fit(new_unique_color_pixels)  
 
     # Get the cluster centers and their HSL values
     unique_cluster_centers = unique_clf.cluster_centers_
-    print("UNIQUE CLUSTER CENTERS:", unique_cluster_centers)
+    #print("UNIQUE CLUSTER CENTERS:", unique_cluster_centers)
     
 
     # Find the cluster center with the highest saturation value
@@ -573,7 +545,7 @@ def get_most_interesting_color(new_unique_color_pixels):
     h = sum(h_values) / len(h_values)
 
 
-    print( "MOST INTERESTING HSL BEFORE MODIFICATION", h, s, l )
+    #print( "MOST INTERESTING HSL BEFORE MODIFICATION", h, s, l )
 
         #If l is below 35, and s is below 40, raise them
     if l < 35:
@@ -592,7 +564,7 @@ def select_most_unique_color(unique_color_labels_dissimilar, unique_color_pixels
     #First categorize image using the cluster color labels:
     image_category = categorize_image(cluster_color_labels)
     most_contrasting_label = select_most_contrasting_label(image_category, unique_color_labels_dissimilar)
-    print("MOST CONTRASTING LABEL: ", most_contrasting_label)
+    #print("MOST CONTRASTING LABEL: ", most_contrasting_label)
     new_unique_color_pixels = pop_unique_similars(most_contrasting_label, unique_color_labels_dissimilar, unique_color_pixels)
     most_interesting_color = get_most_interesting_color(new_unique_color_pixels)
 
@@ -657,8 +629,8 @@ def display_image_with_palette(img, cluster_center_palette, unique_color_hex, im
         ax[2].set_xticklabels(['']*len(unique_color_hex))
         ax[2].set_yticks([])
         ax[2].set_title('Unique Colors')
-        print(unique_color_hex)
-        print(image_category)
+        #print(unique_color_hex)
+        #print(image_category)
     plt.show()
 
     
@@ -668,7 +640,7 @@ def display_image_with_palette(img, cluster_center_palette, unique_color_hex, im
 
 # Main Function Call to Get Palette
 
-def get_palette(image_path, quick=True, show=True):
+def get_palette(image_path, show=True):
     
     #Access image
     if image_path.startswith('http'):
@@ -677,71 +649,71 @@ def get_palette(image_path, quick=True, show=True):
     else:
         img = Image.open(image_path)
 
-    print(f"Image opened successfully: {img.size}")
+    #print(f"Image opened successfully: {img.size}")
 
 
     #Preprocess Image and get combined pixels
-    rgb_pixels = preprocess(img, quick)
+    rgb_pixels = preprocess(img)
     combined_pixels, rgb_pixels, hsl_pixels = combine_pixels(rgb_pixels)
-    print(f"Preprocessing complete: {len(combined_pixels)} pixels processed")
+    #print(f"Preprocessing complete: {len(combined_pixels)} pixels processed")
 
 
 
     #Get Color Labels for Pixels
-    print('Labeling Pixels')
-    print( "HSL PIXELS SAMPLE: ", hsl_pixels[:3]) 
+    #print('Labeling Pixels')
+    #print( "HSL PIXELS SAMPLE: ", hsl_pixels[:3]) 
     pixel_color_labels_list = get_color_labels_list(hsl_pixels)
-    print("Pixels Labeled. Sample: ", pixel_color_labels_list[:10])
+    #print("Pixels Labeled. Sample: ", pixel_color_labels_list[:10])
 
         
     
     
-    print("Beginning KMeans clustering")
+    #print("Beginning KMeans clustering")
     #KMean clustering to get Main Cluster-Center Color Palette
-    clf = KMeans(n_clusters=6)
+    clf = KMeans(n_clusters=6, n_init = 'auto')
     clf.fit(combined_pixels)  # Fit KMeans using HSL values
     cluster_center_palette = clf.cluster_centers_ #Assigns the 6 color centers as 6 colors in color palette
     np.set_printoptions(precision=2, suppress=True)
     cluster_center_palette = np.round(cluster_center_palette, decimals=0).astype(int)
-    print(f"KMeans clustering complete. Palette pixel values: {cluster_center_palette[:, 3:]}")
+    #print(f"KMeans clustering complete. Palette pixel values: {cluster_center_palette[:, 3:]}")
 
 
     #Label Main Cluster Palette colors according to basic hue categories using HSL ([:, 3:])
-    print("Getting Cluster Label Names")
+    #print("Getting Cluster Label Names")
     cluster_color_labels= get_color_labels_list(cluster_center_palette[:, 3:]) # The get_color_labels_list function takes HSL values array
-    print("Cluster Label Names: ", cluster_color_labels)
+    #print("Cluster Label Names: ", cluster_color_labels)
         
     #Get HEX values of Main Cluster Palette
-    print("Getting Hex Values for Palette: ")
+    #print("Getting Hex Values for Palette: ")
     color_palette_hex_values = rgb_to_hex(cluster_center_palette[:, :3]) #rgb_to_hex takes rgb values array
-    print(f"Main cluster palette colors in HEX: {color_palette_hex_values}")
+    #print(f"Main cluster palette colors in HEX: {color_palette_hex_values}")
     
 
     #Identify Unique Colors (if any) and get hex value(s)
 
-    print("Identifying Unique Colors not in Palette (if any).")
+    #print("Identifying Unique Colors not in Palette (if any).")
     
     unique_color_pixels, unique_color_labels = identify_unique_colors(pixel_color_labels_list, hsl_pixels, cluster_center_palette, cluster_color_labels)
 
     
     #print(f"Unique color pixels before dissimilar function: {unique_color_pixels}")
-    print(f"Unique color labels unique labels before dissimilar function: {np.unique(unique_color_labels)}")
+    #print(f"Unique color labels unique labels before dissimilar function: {np.unique(unique_color_labels)}")
 
-    print("Removing too similar Unique Color Labels...")
+    #print("Removing too similar Unique Color Labels...")
     unique_color_labels_dissimilar, unique_color_pixels_dissimilar = compare_color_labels(unique_color_labels, unique_color_pixels, cluster_color_labels)
     unique_labels, counts = np.unique(unique_color_labels_dissimilar, return_counts=True)
-    print("Dissimilar Unique Color Labels: ", unique_labels)
-    print("Counts: ", counts)
+    #print("Dissimilar Unique Color Labels: ", unique_labels)
+    #print("Counts: ", counts)
 
 
 
 
     #Get most unique unique color
-    print("Getting most Unique Color")
+    #print("Getting most Unique Color")
 
     most_interesting_color, image_category = select_most_unique_color(unique_color_labels_dissimilar, unique_color_pixels_dissimilar, cluster_color_labels)
-    print(" most_interesting_color: ", most_interesting_color)
-    print( "image_category", image_category)
+    #print(" most_interesting_color: ", most_interesting_color)
+    #print( "image_category", image_category)
 
 
     unique_color_hex = hsl_to_hex(most_interesting_color)
