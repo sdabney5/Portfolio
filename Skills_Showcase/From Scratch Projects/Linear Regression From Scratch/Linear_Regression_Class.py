@@ -7,11 +7,17 @@ class LinearRegression:
         self.theta = None
         
     def fit(self, X, y):
+        # Convert X to a list of lists if it is a pandas DataFrame or a numpy ndarray
+        #Previous X.insert method was throwing an error
+        if isinstance(X, (pd.DataFrame, np.ndarray)):
+            X = X.tolist()
+
         # Add a column of 1's to X to represent the intercept
-        X = X.insert(0, "ONES", 1) 
+        for row in X:
+            row.insert(0, 1)
         
         # Rows (m) and columns (n)
-        m , n = X.shape
+        m, n = len(X), len(X[0])
         
         # Initialize a list of 0's of length "n" for first theta values
         self.theta = [0]*n         
@@ -38,11 +44,17 @@ class LinearRegression:
                 self.theta[j] -=  self.alpha * dJ_dtheta[j]
             
     def predict(self, X):
-        #Add a column of 1's to X to represent the intercept
-        X = X.insert(0, "ONES", 1) 
+        # Convert X to a list of lists if it is a pandas DataFrame or a numpy ndarray
+        #Previous X.insert method was throwing an error
+        if isinstance(X, (pd.DataFrame, np.ndarray)):
+            X = X.tolist()
+
+        # Add a column of 1's to X to represent the intercept
+        for row in X:
+            row.insert(0, 1)
         
         # Rows (m) and columns (n)
-        m , n = X.shape 
+        m , n = len(X), len(X[0])
         
         #Create a list of zeros for predictions corresponding to each row
         y_prediction = [0]*m 
