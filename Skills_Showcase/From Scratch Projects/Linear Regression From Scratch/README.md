@@ -1,10 +1,18 @@
 # Linear Regression From Scratch
- - This is a Linear Regression Algorithm written from scratch without the use of libraries, including Numpy. 
- - I explain the math involved and compare results of my algo to sklearn on a dataset. 
+ This is a Linear Regression Algorithm written from scratch
    
  ---
 
 ## Project Overview: 
-The " Regression From Scratch" Jupyter Notebook walks through each step of Linear Regression and explains the math behind gradient descent.   
-The Linear_Regression_Class is the python script.   
-The "Linear_Regression_Comparison_Notebook" compares results of my algorithm to results using SKLearn on the same data set.
+
+In this project, I developed a linear regression function from scratch, without relying on any Python libraries. Although some libraries, especially numpy, could make the code more efficient and less cumbersome, this approach demonstrates a comprehensive understanding of the underlying mechanics of linear regression.  
+  
+The project consists of three main components:
+
+- A Jupyter Notebook, "Linear Regression from Scratch," which provides a detailed walkthrough of my linear regression project.
+- A Python script, "Linear_Regression_Class," which contains the code for the linear regression algorithm.
+- Another Jupyter Notebook, "Linear Regression Comparison," which compares the results of my algorithm with those of the SKLearn library on the same dataset.
+  
+  
+Thanks for taking the time to check out this project!
+
