@@ -7,10 +7,8 @@ class LinearRegression:
         self.theta = None
         
     def fit(self, X, y):
-        # Convert X to a list of lists if it is a pandas DataFrame or a numpy ndarray
-        #Previous X.insert method was throwing an error
-        if isinstance(X, (pd.DataFrame, np.ndarray)):
-            X = X.tolist()
+        # Convert X to a list of lists
+        X = X.tolist()
 
         # Add a column of 1's to X to represent the intercept
         for row in X:
@@ -44,10 +42,8 @@ class LinearRegression:
                 self.theta[j] -=  self.alpha * dJ_dtheta[j]
             
     def predict(self, X):
-        # Convert X to a list of lists if it is a pandas DataFrame or a numpy ndarray
-        #Previous X.insert method was throwing an error
-        if isinstance(X, (pd.DataFrame, np.ndarray)):
-            X = X.tolist()
+        # Convert X to a list of lists
+        X = X.tolist()
 
         # Add a column of 1's to X to represent the intercept
         for row in X:
