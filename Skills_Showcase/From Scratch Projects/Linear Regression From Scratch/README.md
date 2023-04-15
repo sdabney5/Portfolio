@@ -9,10 +9,14 @@ In this project, I developed a linear regression function from scratch, without 
   
 The project consists of three main components:
 
-- A Jupyter Notebook, "Linear Regression from Scratch," which provides a detailed walkthrough of my linear regression project.
-- A Python script, "Linear_Regression_Class," which contains the code for the linear regression algorithm.
-- Another Jupyter Notebook, "Linear Regression Comparison," which compares the results of my algorithm with those of the SKLearn library on the same dataset.
+- "Linear Regression from Scratch," which provides a detailed walkthrough of my linear regression project.
+- "Linear_Regression_Class," which contains the code for the linear regression algorithm.
+- "Linear Regression Algorithm Comparison," which compares the results of my algorithm with those of the SKLearn library on the same dataset.
   
   
 Thanks for taking the time to check out this project!
+
+--- 
+
+
 
