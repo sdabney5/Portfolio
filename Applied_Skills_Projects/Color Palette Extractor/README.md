@@ -34,7 +34,7 @@ _______________________________________________________________________________
 ### Notes
 Please note that the program assumes the image is in RGB mode (not grayscale, CMYK, etc.).
 
-ALso note that, while Color Palette Extractor includes a feature to display the extracted colors, this is primarily intended for testing and debugging purposes. If you want to use the program to display the hex values in a visually appealing way, I recommend that you create your own function or use an existing library. However, the built-in display function can still be useful for quickly verifying that the program is working correctly and extracting the expected colors from an image, or if a visually appealing display is not required.
+Also note that, while Color Palette Extractor includes a feature to display the extracted colors, this is primarily intended for testing and debugging purposes. If you want to use the program to display the hex values in a visually appealing way, I recommend that you create your own function or use an existing library. However, the built-in display function can still be useful for quickly verifying that the program is working correctly and extracting the expected colors from an image, or if a visually appealing display is not required.
 
 
 **Thank you for using Color Palette Extractor! Feel free to use this code in your projects! If you find it helpful, please cite me in your work by including a link to this repository.**
