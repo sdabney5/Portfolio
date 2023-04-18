@@ -21,9 +21,10 @@ The **get_palette()** function returns three values:
 - **category**: a string indicating the overall category of the image
 - **unique_colors**: Hex color code of unique color (if present)
 
-Here's an example of how to use the **get_palette()**  function:
+Here's an example of how to use the **get_palette()**  function:  
 _______________________________________________________________________________
-from **color_palette_extractor** import **get_palette**
+from **color_palette_extractor** import **get_palette**  
+  
 palette, category, unique_color = **get_palette('path/to/image.jpg')**
 _______________________________________________________________________________
 
