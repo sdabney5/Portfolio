@@ -1,5 +1,5 @@
 # Linear Regression From Scratch
- This is a Linear Regression Algorithm written from scratch
+ Linear Regression Algorithm written from scratch with a Jupyter Notebook explaining the code. Also included is a project comparing the results of my algorithm to SKLearn's. 
    
  ---
 
