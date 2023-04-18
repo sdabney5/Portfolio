@@ -1,6 +1,9 @@
 # Color Palette Extractor
 ### Overview:
-Color Palette Extractor Color Palette Extractor is a Python program that automatically generates a color palette for a given image. The program uses K Means Clustering to get the dominant colors of the image. However, since previous versions of the program were not able to identify small splashes of contrasting colors which should be in the color palette, it reexamines the image to find instances of color which contrast with the color palette, i.e., colors which are “unique”. After extracting the pixels with color labels most dissimilar to palette colors, the remaining pixels are clustered with a KMeans algorithm and a representative color is chosen from among the cluster centers.
+Color Palette Extractor is a tool I developed to automatically create a color palette for a given image, using K Means Clustering. However, color palettes functions that utilize KMeans in this way often struggle to capture small splashes of contrasting colors. To address this issue, I added a feature that reexamines the image after KMeans clustering is performed. Unique/Contrasting colors are identified using a labeling function that assigns a broad color name to each pixel, based on the hue value. These labels are compared to the color palette labels to eliminate non-unique colors. Pixels with the most dissimilar labels are further filtered and finally clustered using KMeans. From the resulting cluster centers, a representative color is automatically chosen. Additionally, the program categorizes the image overall. The output includes the color palette hex values, the unique color hex value (if present), and the image category.
+
+
+
 
 
 ### Usage
@@ -30,6 +33,8 @@ _______________________________________________________________________________
 
 ### Notes
 Please note that the program assumes the image is in RGB mode (not grayscale, CMYK, etc.).
+
+ALso note that, while Color Palette Extractor includes a feature to display the extracted colors, this is primarily intended for testing and debugging purposes. If you want to use the program to display the hex values in a visually appealing way, I recommend that you create your own function or use an existing library. However, the built-in display function can still be useful for quickly verifying that the program is working correctly and extracting the expected colors from an image, or if a visually appealing display is not required.
 
 
 **Thank you for using Color Palette Extractor! Feel free to use this code in your projects! If you find it helpful, please cite me in your work by including a link to this repository.**
