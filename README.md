@@ -9,16 +9,15 @@ This repository is a collection of my data science projects. There are two main 
   - Linear Regression
   - Logistic Regression
   - K Nearest Neighbors
+</details>
  
- 
-<details>
 <details>
   <summary><h2>Applied Skills Projects</h2></summary>
 
-  This directory contains projects that demonstrate my ability to apply various data science skills and techniques.  The projects in this directory include:
+  This directory contains projects that demonstrate my ability to apply various data science skills and techniques. The projects in this directory include:
 
- <details>
-   <summary><h4>Color Palette Extractor</h4></summary>
+  <details>
+    <summary><h4>Color Palette Extractor</h4></summary>
   
     A Python script that extracts color palettes from images. This project also includes an explanatory Jupyter Notebook that walks through the process and provides visualizations of the results.
   </details>
