@@ -3,8 +3,9 @@
 COLOR PALETTE EXTRACTOR V3
 
 This script extracts a color palette from an input image using a KMeans clustering algorithm. 
+It uses KMeans clustering algorithm twice to improve the accuracy of the color palette extraction. 
 First a KMeans algorithm extracts the main color palette of the image. The pixels are then each re-examined and compared to the dominant colors. 
-After then extracting the pixels with color labels most dissimilar to palette colors, the remaining pixels are clustered with a KMeans algo (again), 
+After then extracting the pixels with color labels most dissimilar to palette colors, the remaining pixels are clustered with a KMeans algo, 
 and a representative color is chosen from among the cluster centers. 
 
 This process makes the color palette extraction more robust and accurate for a wider range of images, 
@@ -43,6 +44,8 @@ import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 from io import BytesIO
+import collections
+
 
 
 
@@ -138,8 +141,8 @@ def combined_pixels_to_rgb(combined_pixels):
 #resize function
 def resize_image(img):
     # check image size and resize if too big (>1000x1000)
-    if img.size[0] > 100 or img.size[1] > 150:
-        newsize_img = img.resize((100, 150))
+    if img.size[0] > 200 or img.size[1] > 300:
+            newsize_img = img.resize((200, 300))
     else:
         newsize_img = img.copy()
 
@@ -169,14 +172,14 @@ def compare_color_labels(unique_color_labels, unique_color_pixels, cluster_color
     # This function looks at the pixel color labels and the main color palette color labels and determines whether they are similar enough to ignore. 
 
     black_similar = ["Blacks", "Dark-Greys", "Dark-Browns"]
-    blue_similar = ["Blue-Cyans", "Violet-Blues, Purples"]
+    blue_similar = ["Blues", "Purples"]
     red_orange_similar = ["Red-Oranges", "Reds", "Oranges"]
-    brown_similar = ["Dark-Browns", "Light-Browns / Tans"]
+    brown_similar = ["Dark-Browns", "Light-Browns / Tans", "Yellows"]
     grey_similar = ["Dark-Greys", "Light-Greys / Off-Whites"]
     green_similar = ["Greens", "Cyans", "Yellow-Greens"]
     white_similar = ["Whites", "Light-Greys / Off-Whites"]
     yellow_similar = ["Yellows", "Oranges", "Yellow-Greens"]
-    pink_similar = ["Pinks", "Reds", "Magenta-Pinks"]
+    pink_similar = ["Pinks", "Magenta-Pinks"]
 
     # Make copies of the input lists to avoid modifying them during iteration
     unique_color_labels_copy = unique_color_labels.copy()
@@ -204,6 +207,7 @@ def compare_color_labels(unique_color_labels, unique_color_pixels, cluster_color
         unique_color_pixels_list.pop(i)
 
     unique_color_labels_dissimilar = unique_color_labels
+    #print( 'Color Labels after Similarity Function', np.unique(unique_color_labels_dissimilar))
 
     # Convert the pixels list back to a numpy array.
     unique_color_pixels_dissimilar = np.array(unique_color_pixels_list)
@@ -228,8 +232,8 @@ def get_h_range_color_name(hsl_pixel):
         (140, 180): "Cyans",
         (180, 220): "Blues",
         (220, 299): "Purples",
-        (299, 310): "Magenta-Pinks",
-        (310, 360): "Pinks"
+        (299, 330): "Magenta-Pinks",
+        (330, 360): "Pinks"
     }
     
     for range_, color_name in color_dict.items():
@@ -444,7 +448,7 @@ def get_color_labels_list(hsl_pixels):
 
 
 # Function to Identify Unique Colors (if any) That is, colors that standout but are not captured in the Kmeans Palette
-def identify_unique_colors(pixel_color_labels_list, hsl_pixels, cluster_center_palette, cluster_color_labels, min_count=50, max_count=1000):
+def identify_unique_colors(pixel_color_labels_list, hsl_pixels, cluster_center_palette, cluster_color_labels, min_count=225, max_count=1000):
 
     # Create an empty dictionary to store counts of each unique color
     color_counts = {}
@@ -463,8 +467,8 @@ def identify_unique_colors(pixel_color_labels_list, hsl_pixels, cluster_center_p
 
     # If there are no unique colors, return an empty list
     if not unique_color_labels:        
-        print("No Unique Color Pixel Values")
-        print( "No Unique Color Labels")
+        #print("No Unique Color Pixel Values")
+        #print( "No Unique Color Labels")
         return [], []
 
 
@@ -474,7 +478,12 @@ def identify_unique_colors(pixel_color_labels_list, hsl_pixels, cluster_center_p
     # Create a list of labels that correspond to the unique color pixels
     unique_color_labels_final = [label for i, label in enumerate(pixel_color_labels_list) if (label in unique_color_labels) and (hsl_pixels[i] in unique_color_pixels)]
 
+    
     unique_color_labels = unique_color_labels_final
+
+    counts = collections.Counter(unique_color_labels)
+
+    #print(counts)
 
     return unique_color_pixels, unique_color_labels
 
@@ -482,13 +491,13 @@ def identify_unique_colors(pixel_color_labels_list, hsl_pixels, cluster_center_p
 #This function sets color priorities for each category and returns the first color label with the highest priority that appears in the unique colors. 
 def select_most_contrasting_label(image_category, unique_color_labels_dissimilar):
     priorities = {
-        "Brownish": ["Cyans", "Purples", "Greens", "Reds", "Red-Oranges", "Pinks"],
+        "Brownish": ["Purples", "Reds", "Red-Oranges", "Pinks", "Cyans", "Greens",],
         "Yellowish": ["Reds", "Red-Oranges",  "Magenta-Pinks", "Pinks" , "Blues", "Cyans", "Purples", "Greens"],
         "Greenish": ["Reds", "Red-Oranges", "Oranges", "Magenta-Pinks", "Pinks"],
         "Redish": ["Cyans", "Blues", "Greens", "Violet-Blues"],
         "Blueish": ["Reds", "Yellows", "Red-Oranges", "Oranges", "Magenta-Pinks", "Pinks"],
         "White-ish": ["Blacks", "Dark-Greys", "Reds", "Red-Oranges", "Oranges", "Magenta-Pinks", "Pinks", "Greens", "Cyans", "Blues", "Purples"],
-        "Blackish" : ["Whites", "Reds", "Red-Oranges", "Oranges", "Magenta-Pinks", "Pinks", "Greens", "Blue-Cyans", "Blues", "Violet-Blues", "Purples"],
+        "Blackish" : ["Whites", "Reds", "Red-Oranges", "Oranges", "Magenta-Pinks", "Pinks", "Greens", "Cyans", "Blues", "Violet-Blues", "Purples"],
         "Varied" : ["Reds", "Blues", "Greens"],
         "Greyish" : ["Reds", "Red-Oranges", "Oranges", "Magenta-Pinks", "Pinks", "Greens", "Cyans", "Blues"]
     }
@@ -552,7 +561,13 @@ def get_most_interesting_color(new_unique_color_pixels):
     if l < 36 and s < 40:
         s = 40
 
+    #If too saturated, reduce it
+    if s > 85:
+        s = 75
 
+
+
+    #print(h, s, l)
     return (h, s, l)
 
 
@@ -574,7 +589,7 @@ def select_most_unique_color(unique_color_labels_dissimilar, unique_color_pixels
 
 def categorize_image(color_labels):
     categories = {
-        "Brownish": ["Dark-Browns", "Light-Browns / Tans"],
+        "Brownish": ["Dark-Browns", "Light-Browns / Tans", "Yellows"],
         "Yellowish": ['Yellows', "Yellow-Greens" "Light-Browns / Tans"],
         "Greenish": ["Greens", "Cyans", "Yellow-Greens"],
         "Redish": ["Reds", "Red-Oranges", "Oranges", "Magenta-Pinks", "Pinks"],
@@ -628,8 +643,8 @@ def display_image_with_palette(img, cluster_center_palette, unique_color_hex, im
         ax[2].set_xticklabels(['']*len(unique_color_hex))
         ax[2].set_yticks([])
         ax[2].set_title('Unique Colors')
-        #print(unique_color_hex)
-        #print(image_category)
+        print(unique_color_hex)
+        print(image_category)
     plt.show()
 
     
