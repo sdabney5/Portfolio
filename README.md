@@ -10,30 +10,12 @@ This repository is a collection of my data science projects. There are two main 
   - Logistic Regression
   - K Nearest Neighbors
  
-  <details>
-    <summary><h4>Linear Regression</h4></summary>
-  
-    Each folder contains the `.py` script for the respective algorithm. The Linear Regression folder also contains explanatory Jupyter Notebooks to provide a deeper understanding of the implementation.
-  </details>
-
-  <details>
-    <summary><h4>Logistic Regression</h4></summary>
-  
-    Each folder contains the `.py` script for the respective algorithm. The Logistic Regression folder also contains explanatory Jupyter Notebooks to provide a deeper understanding of the implementation.
-  </details>
-
-  <details>
-    <summary><h4>KNN (k-Nearest Neighbors)</h4></summary>
-  
-    Each folder contains the `.py` script for the respective algorithm. The KNN (k-Nearest Neighbors) folder also contains explanatory Jupyter Notebooks to provide a deeper understanding of the implementation.
-  </details>
-
-</details>
+ 
 
 <details>
   <summary><h2>Applied Skills Projects</h2></summary>
 
-  This directory contains projects that demonstrate my ability to apply various data science skills and techniques. The projects in this directory include:
+  This directory contains projects that demonstrate my ability to apply various data science skills and techniques.  The projects in this directory include:
 
   <details>
     <summary><h4>Color Palette Extractor</h4></summary>
@@ -43,7 +25,7 @@ This repository is a collection of my data science projects. There are two main 
 
 </details>
 
-Feel free to explore the projects and don't hesitate to reach out if you have any questions or suggestions. Enjoy!
+Feel free to explore the projects and don't hesitate to reach out if you have any questions.
 
 ---
 
