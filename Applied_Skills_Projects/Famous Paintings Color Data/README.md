@@ -1,4 +1,4 @@
-# Famous Paintings Color Palette Extraction
+# Famous Paintings Color Palette Data
 I scraped Painting Data and used a custom python script to produce a Famous Paitings Color Palette Database.
 
 Highlights:
