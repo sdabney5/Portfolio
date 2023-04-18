@@ -33,5 +33,5 @@ Please note that the program assumes the image is in RGB mode (not grayscale, CM
 
 
 
-**Thank you for using Color Palette Extractor!**
+**Thank you for using Color Palette Extractor! Feel free to use this code in your projects! If you find it helpful, please cite me in your work by including a link to this repository.**
 
