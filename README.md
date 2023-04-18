@@ -30,4 +30,4 @@ This repository is a collection of my data science projects. There are two main 
 
 *shanedabney5@gmail.com*
 
-Feel free to explore the projects and don't hesitate to reach out if you have any questions.
+_Feel free to explore the projects and don't hesitate to reach out if you have any questions._
