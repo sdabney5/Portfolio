@@ -23,10 +23,11 @@ This repository is a collection of my data science projects. There are two main 
 
 </details>
 
-Feel free to explore the projects and don't hesitate to reach out if you have any questions.
 
 ---
 
 *Shane Dabney*
 
 *shanedabney5@gmail.com*
+
+Feel free to explore the projects and don't hesitate to reach out if you have any questions.
