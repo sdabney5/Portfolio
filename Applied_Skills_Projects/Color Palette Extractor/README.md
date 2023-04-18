@@ -34,4 +34,4 @@ Please note that the program assumes the image is in RGB mode (not grayscale, CM
 
 
 **Thank you for using Color Palette Extractor!**
-Shane Dabney
+
