@@ -1,12 +1,13 @@
 # Famous Paintings Color Palette Extraction
 
 #### **TLDR:**
-I scraped Painting Data and used a custom python script to produce color palette and image category.
+I scraped Painting Data and used a custom python script to produce a Famous Paitings Color Palette Database.
 
 Highlights:
 * Data Scraping
 * Data Cleaning
-* Data Visualization
+* Feature Engineering
+* Visualization
 
 --- --- --- 
 
