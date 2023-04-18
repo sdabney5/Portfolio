@@ -11,7 +11,7 @@ This repository is a collection of my data science projects. There are two main 
   - K Nearest Neighbors
  
  
-
+<details>
 <details>
   <summary><h2>Applied Skills Projects</h2></summary>
 
