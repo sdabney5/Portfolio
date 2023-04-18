@@ -1,5 +1,11 @@
 # Skills Showcase
-This directory contains projects showcasing particular skills or knowledge. 
+
+
+These projects were done primarily as an exploration of the inner workings of each algorithm in depth. Secondarily, I think they showcase both an understanding of the algorithms, as well as my skills in algorithm development.
+
+Where necessary, I have taken a deep dive into the mathematical principles and concepts that underlie each algorithm, building my understanding from the ground up. Through this process of exploration and discovery, I've gained a deep appreciation for the intricacies of each algorithm.
+
+Thanks for checking these out!
   
 ---
   
