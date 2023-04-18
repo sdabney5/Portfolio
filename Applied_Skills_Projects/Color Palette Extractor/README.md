@@ -31,7 +31,6 @@ _______________________________________________________________________________
 ### Notes
 Please note that the program assumes the image is in RGB mode (not grayscale, CMYK, etc.).
 
-### Author and Date
-This program was written by Shane Dabney on March 29, 2023.
 
+This program was written by Shane Dabney on March 29, 2023.
 **Thank you for using Color Palette Extractor!**
