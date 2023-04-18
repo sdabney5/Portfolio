@@ -17,8 +17,8 @@ This repository is a collection of my data science projects. There are two main 
 
   This directory contains projects that demonstrate my ability to apply various data science skills and techniques.  The projects in this directory include:
 
-  <details>
-    <summary><h4>Color Palette Extractor</h4></summary>
+ <details>
+   <summary><h4>Color Palette Extractor</h4></summary>
   
     A Python script that extracts color palettes from images. This project also includes an explanatory Jupyter Notebook that walks through the process and provides visualizations of the results.
   </details>
