@@ -26,7 +26,7 @@ This repository is a collection of my data science projects. There are two main 
 
 ---
 
-*Shane Dabney*
+**Shane Dabney**
 
 *shanedabney5@gmail.com*
 
