@@ -36,7 +36,7 @@ ___
 <details>
   <summary><h2>Practical Projects</h2></summary>
 
-  The Practical Projects directory contains projects that apply the technical knowledge demonstrated in the Skills_Showcase. Projects include:
+  The Practical Projects directory contains projects that apply the technical knowledge demonstrated in Conceptual Projects. Projects include:
   - Color Palette Extractor
   - Famous Paintings Color Data
   <details>
