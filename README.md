@@ -1,5 +1,4 @@
 # Portfolio
-![Models Comparison](Portfolio/images/Scratch vs SKLearn models.jpg)
 
 This repository is a collection of my Data Science and Machine Learning projects. There are two main directories:
 
@@ -15,15 +14,13 @@ This repository is a collection of my Data Science and Machine Learning projects
 
     <h4>Linear Regression Models Comparison</h4>
     
-    ![Models Comparison](Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg)
 
     <img src="Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg" alt="Models Comparison">
 
     <img src="Portfolio/images/Scratch%20vs%20SKlearn%20r2%20and%20mae.jpg" alt="Model Scores Compared">
 
-    <img src="Portfolio/Conceptual Projects/linear_regression/images/Scratch%20and%20SKLEARN%20overlaid.jpg" alt="Models Overlaid">
+    <img src="Portfolio/images/Scratch%20and%20SKLEARN%20overlaid.jpg" alt="Models Overlaid">
 
-    <img src="Portfolio/Conceptual Projects/k_nearest_neighbors/sample.png" alt="KNN Sample">
   </details>
 </details>
  
