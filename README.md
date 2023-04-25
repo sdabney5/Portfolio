@@ -13,11 +13,12 @@ This repository is a collection of my Data Science and Machine Learning projects
     <summary><h3>Sample Images</h3></summary>
   
 
-    <img src="Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg" alt="Models Comparison">
+      <img src="Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg" alt="Models Comparison">
 
-    <img src="Portfolio/images/Scratch%20vs%20SKlearn%20r2%20and%20mae.jpg" alt="Model Scores Compared">
+      <img src="Portfolio/images/Scratch%20vs%20SKlearn%20r2%20and%20mae.jpg" alt="Model Scores Compared">
 
-    <img src="Portfolio/images/Scratch%20and%20SKLEARN%20overlaid.jpg" alt="Models Overlaid">
+      <img src="Portfolio/images/Scratch%20and%20SKLEARN%20overlaid.jpg" alt="Models Overlaid">
+
 
    </details>
 </details>
