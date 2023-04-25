@@ -12,13 +12,13 @@ This repository is a collection of my Data Science and Machine Learning projects
   <details>
     <summary><h3>Sample Images</h3></summary>
 
-     <h4>Linear Regression</h4>
-     <img src="conceptual_projects/linear_regression/sample.png" alt="Linear Regression Sample">
+     <h4>Linear Regression Models Comparison</h4>
+     <img src="Portfolio/images/Scratch vs SKLearn models.jpg" alt="Models Comparison">
+    
+    <img src="Portfolio/images/Scratch vs SKlearn r2 and mae.jpg " alt="Model Scores Compared">
 
-     <h4>Logistic Regression</h4>
-    <img src="conceptual_projects/logistic_regression/sample.png" alt="Logistic Regression Sample">
+    <img src="Portfolio/images/Scratch and SKLEARN overlaid.jpg " alt="Models Overlaid">
 
-    <h4>K Nearest Neighbors</h4>
     <img src="conceptual_projects/k_nearest_neighbors/sample.png" alt="KNN Sample">
   </details>
 </details>
