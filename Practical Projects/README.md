@@ -1,36 +1,9 @@
-# Color Palette Extractor
-### Overview:
-Color Palette Extractor Color Palette Extractor is a Python program that automatically generates a color palette for a given image. The program uses K Means Clustering to get the dominant colors of the image. However, since previous versions of the program were not able to identify small splashes of contrasting colors which should be in the color palette, it reexamines the image to find instances of color which contrast with the color palette, i.e., colors which are “unique”. After extracting the pixels with color labels most dissimilar to palette colors, the remaining pixels are clustered with a KMeans algorithm and a representative color is chosen from among the cluster centers.
+# Practical Projects  
 
+This directory contains two Python projects:
 
-### Usage
-To use Color Palette Extractor, you must have Python 3.x installed on your computer along with the following dependencies:  
-- numpy
-- pandas
-- scikit-learn
-- matplotlib
-- Pillow
+## Color Palette Extractor  
+- Color Palette Extractor is a Python program that automatically generates a color palette for a given image. The program uses K Means Clustering to get the dominant colors of the image and extracts small splashes of contrasting colors which should be in the color palette. The code for this project is in the Color Palette Extractor folder.
 
-To use this script, download or clone the repository to your local machine.
-You can install these packages using the following command:
-	**pip install -r requirements.txt**
-	
-Once you have the dependencies installed, you can run the program using the **get_palette()** function. This function takes one argument, which is the path to the image you want to extract a color palette from.
-The **get_palette()** function returns three values:
-- **palette**: a list of hex color codes representing the dominant colors in the image
-- **category**: a string indicating the overall category of the image
-- **unique_colors**: Hex color code of unique color (if present)
-
-Here's an example of how to use the **get_palette()**  function:  
-_______________________________________________________________________________
-from **color_palette_extractor** import **get_palette**  
-  
-palette, category, unique_color = **get_palette('path/to/image.jpg')**
-_______________________________________________________________________________
-
-### Notes
-Please note that the program assumes the image is in RGB mode (not grayscale, CMYK, etc.).
-
-
-**Thank you for using Color Palette Extractor! Feel free to use this code in your projects! If you find it helpful, please cite me in your work by including a link to this repository.**
-
+## Famous Paintings Color Data  
+- Famous Paintings Color Data is a Python project that uses web scraping and data visualization to extract color palette information from a list of famous paintings. The project uses Beautiful Soup to scrape painting data from the web, and uses my color_palette_extractor script to extract the color palettes of each painting. The resulting CSV file contains color palette information for each of the paintings, including hex values for the color palette, the image category, and unique contrasting color hex value (if present). The CSV file is included in this directory as well. 
