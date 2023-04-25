@@ -1,6 +1,6 @@
 # Portfolio
 
-This repository is a collection of my data science projects. There are two main directories:
+This repository is a collection of my Data Science and Machine Learning projects. There are two main directories:
 
 <details>
   <summary><h2>Conceptual Projects</h2></summary>
