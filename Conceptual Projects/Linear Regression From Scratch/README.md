@@ -9,7 +9,7 @@ In this project, I developed a linear regression class from scratch, without rel
   
 The project consists of three main components:
 
-- "Linear Regression from Scratch," which provides a detailed walkthrough of my linear regression project.
+- "Linear Regression Notebook," which provides a detailed walkthrough of my linear regression project.
 - "Linear_Regression_Class," which contains the code for the linear regression algorithm.
 - "Linear Regression Algorithm Comparison," which compares the results of my algorithm with those of the SKLearn library on the same dataset.
   
