@@ -5,7 +5,7 @@
 
 ## Project Overview: 
 
-In this project, I developed a linear regression function from scratch, without relying on any Python libraries. Although some libraries, especially numpy, could make the code more efficient and less cumbersome, this approach demonstrates a comprehensive understanding of the underlying mechanics of linear regression.  
+In this project, I developed a linear regression class from scratch, without relying on any Python libraries. Although some libraries, especially numpy, could make the code more efficient and less cumbersome, this approach demonstrates a comprehensive understanding of the underlying mechanics of linear regression.  
   
 The project consists of three main components:
 
