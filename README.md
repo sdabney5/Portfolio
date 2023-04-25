@@ -17,7 +17,7 @@ This repository is a collection of my Data Science and Machine Learning projects
     
     <img src="Portfolio/images/Scratch vs SKlearn r2 and mae.jpg " alt="Model Scores Compared">
 
-    <img src="Portfolio/images/Scratch and SKLEARN overlaid.jpg " alt="Models Overlaid">
+    <img src="images/Scratch and SKLEARN overlaid.jpg" alt="Models Overlaid">
 
     <img src="conceptual_projects/k_nearest_neighbors/sample.png" alt="KNN Sample">
   </details>
