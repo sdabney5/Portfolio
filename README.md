@@ -1,4 +1,4 @@
-# Shane Dabney Data Science Portfolio
+# Portfolio
 
 This repository is a collection of my data science projects. There are two main directories:
 
