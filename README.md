@@ -5,7 +5,7 @@ This repository is a collection of my Data Science and Machine Learning projects
 <details>
   <summary><h2>Conceptual Projects</h2></summary>
 
-  The Conceptual Projects directory contains several machine learning projects that I've built from scratch. The following algorithms are included:  
+  The Conceptual Projects directory contains several machine learning projects, including algorithms that I've built from scratch. The following algorithms are included:  
   - Linear Regression
   - Logistic Regression
   - K Nearest Neighbors
