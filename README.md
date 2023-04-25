@@ -12,14 +12,17 @@ This repository is a collection of my Data Science and Machine Learning projects
   <details>
     <summary><h3>Sample Images</h3></summary>
 
-     <h4>Linear Regression Models Comparison</h4>
-     <img src="Portfolio/images/Scratch vs SKLearn models.jpg" alt="Models Comparison">
+    <h4>Linear Regression Models Comparison</h4>
     
-    <img src="Portfolio/images/Scratch vs SKlearn r2 and mae.jpg " alt="Model Scores Compared">
+    ![Models Comparison](Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg)
 
-    <img src="images/Scratch and SKLEARN overlaid.jpg" alt="Models Overlaid">
+    <img src="Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg" alt="Models Comparison">
 
-    <img src="conceptual_projects/k_nearest_neighbors/sample.png" alt="KNN Sample">
+    <img src="Portfolio/images/Scratch%20vs%20SKlearn%20r2%20and%20mae.jpg" alt="Model Scores Compared">
+
+    <img src="Portfolio/Conceptual Projects/linear_regression/images/Scratch%20and%20SKLEARN%20overlaid.jpg" alt="Models Overlaid">
+
+    <img src="Portfolio/Conceptual Projects/k_nearest_neighbors/sample.png" alt="KNN Sample">
   </details>
 </details>
  
@@ -32,6 +35,6 @@ This repository is a collection of my Data Science and Machine Learning projects
 
 </details>
 
-
 ---
+
 _Feel free to explore the projects and don't hesitate to reach out if you have any questions._
