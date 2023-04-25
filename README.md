@@ -11,9 +11,7 @@ This repository is a collection of my Data Science and Machine Learning projects
   - K Nearest Neighbors
   <details>
     <summary><h3>Sample Images</h3></summary>
-
-    <h4>Linear Regression Models Comparison</h4>
-    
+  
 
     <img src="Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg" alt="Models Comparison">
 
@@ -21,7 +19,7 @@ This repository is a collection of my Data Science and Machine Learning projects
 
     <img src="Portfolio/images/Scratch%20and%20SKLEARN%20overlaid.jpg" alt="Models Overlaid">
 
-  </details>
+   </details>
 </details>
  
 <details>
