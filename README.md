@@ -1,4 +1,5 @@
 # Portfolio
+![Models Comparison](Portfolio/images/Scratch%20vs%20SKLearn%20models.jpg)
 
 This repository is a collection of my Data Science and Machine Learning projects. There are two main directories:
 
