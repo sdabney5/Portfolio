@@ -1,5 +1,5 @@
 # Famous Paintings Color Palette Data
-I scraped Painting Data and used a custom python script to produce a Famous Paitings Color Palette Database.
+I scraped Painting Data and used a custom python script to produce a Famous Paintings Color Palette Database.
 
 Highlights:
 * Web Scraping
