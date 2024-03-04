@@ -3,14 +3,14 @@
 This repository is a collection of some personal projects. There are two main directories:
 
 <details>
-  <summary><h2>Conceptual Projects</h2></summary>
+  <summary>Conceptual Projects</summary>
 
   The Conceptual Projects directory contains several machine learning projects, including algorithms that I've built from scratch. The following algorithms are included:  
   - Linear Regression
   - Logistic Regression
   - K Nearest Neighbors
   <details>
-    <summary><h4>Conceptual Projects Sample Images</h4></summary>  
+    <summary>Conceptual Projects Sample Images</summary>   
       
 - From Linear Regression From Scratch Notebook:  
   
@@ -34,13 +34,13 @@ ___
 </details>
  
 <details>
-  <summary><h2>Practical Projects</h2></summary>
+  <summary>Practical Projects</summary>
 
   The Practical Projects directory contains projects that apply the technical knowledge demonstrated in Conceptual Projects. Projects include:
   - Color Palette Extractor
   - Famous Paintings Color Data
   <details>
-  <summary><h4>Practical Projects Sample Images</h4></summary>  
+  <summary>Practical Projects Sample Images</summary>  
     - Color Palette Extractor:  
       
 ![KMEANS_PALETTE_W_Label_W_IMAGE](https://user-images.githubusercontent.com/108029118/234377023-c89df905-9c5f-41aa-ba3f-09d62cafc8b2.jpg)  
